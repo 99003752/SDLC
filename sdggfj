@@ -1,4 +1,37 @@
+#include <stdio.h>
 
+int main()
+{
+    int num;
+    int base;
+    printf("enter base\n");
+    scanf("%d",&base);
+    printf("enter number\n");
+    scanf("%d",&num)
+    return 0;
+}
+
+float convert_to_x_base(int num, int base)//7
+{    
+    float rem;
+    // base condition
+    if (num == 0)
+    {
+        return 0;
+    }
+    else
+    {
+        rem = num % base; // get the rightmost digit        
+        convert_to_x_base(num/base, base);  // recursive call        
+        if(base == 16 && rem >= 10)
+        {
+            return rem+55;
+        }
+        else
+        {
+            return rem ;
+    }
+}
 /******************************************************************************
 
                             Online C Compiler.
